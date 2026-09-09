@@ -72,7 +72,6 @@ func main() {
 	// head = insertLast(15, head)
 	printNode(head)
 	fmt.Println("\nReverse LinkedList")
-	val := reverseList(head)
-	printNode(val)
+	printNode(reverseList(head))
 
 }
