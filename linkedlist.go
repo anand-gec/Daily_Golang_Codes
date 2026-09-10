@@ -62,7 +62,7 @@ func insertLast(val int, head *node) *node {
 	return head
 }
 
-//delete at last
+// delete at last
 func deleteAtLast(head *node) *node {
 	if head == nil {
 		return nil
@@ -81,6 +81,9 @@ func deleteAtLast(head *node) *node {
 // delete at first
 func deleteAtFirst(head *node) *node {
 	if head == nil {
+		return nil
+	}
+	if head.next == nil {
 		return nil
 	}
 	return head.next
