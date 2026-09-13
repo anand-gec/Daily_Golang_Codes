@@ -91,6 +91,7 @@ func deleteAtFirst(head *node) *node {
 
 // Reverse LinkedList
 func reverseList(head *node) *node {
+	fmt.Println("Reverse linkedList")
 	if head == nil {
 		return head
 	}
@@ -105,17 +106,36 @@ func reverseList(head *node) *node {
 	return previous
 }
 
+func removeNum(val int, head *node) *node {
+	// var temp *node
+	dummy := &node{next: head}
+	temp := dummy
+
+	for temp.next != nil {
+		if temp.next.val == val {
+			temp.next = temp.next.next
+		} else {
+			temp = temp.next
+		}
+	}
+
+	return dummy.next
+}
+
 func main() {
 	var head *node
 	head = addNode(7, head)
+	head = addNode(5, head)
 	head = addNode(8, head)
 	head = addNode(9, head)
+	head = addNode(5, head)
 	head = insertFirst(12, head)
 	head = insertLast(15, head)
 	head = deleteAtFirst(head)
 	head = deleteAtLast(head)
+	head = reverseList(head)
+	head = removeNum(5, head)
 	printNode(head)
-	fmt.Println("\nReverse LinkedList")
-	printNode(reverseList(head))
+	// printNode(reverseList(head))
 
 }

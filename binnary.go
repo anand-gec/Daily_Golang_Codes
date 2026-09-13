@@ -20,23 +20,27 @@ func binarySearch(arr []int, target int) bool {
 	return false
 }
 
-// func mergeShort(arr []int) []int {
-// 	var arr3 = []int{}
-// 	start := 0
-// 	end := len(arr) - 1
-// 	mid := (start + end) / 2
-// 	for
-
-// 	return arr3
-// }
-
 func main() {
 	arr := [...]int{2, 3, 6, 7, 9}
-	target := 7
+	target := 6
 	fmt.Println("BinarySearch")
-	fmt.Println("index of arr is : arr", binarySearch(arr[:], target))
+	fmt.Println(" if exist than it will give true otherwise false :", binarySearch(arr[:], target))
+	fmt.Printf("index of arr if exist than 1-len(arr) otherwise -1 than not exist : %d position", binarySearch2(arr[:], target))
 
-	// arr2 := [...]int{6, 8, 2, 5, 3, 9, 1}
-	// fmt.Println("MergeShort")
-	// fmt.Println(mergeShort(arr2[:]))
+}
+
+func binarySearch2(arr []int, target int) int {
+	start := 0
+	end := len(arr) - 1
+	for start <= end {
+		mid := (start + end) / 2
+		if arr[mid] == target {
+			return mid+1
+		} else if arr[mid] < target {
+			start = mid + 1
+		} else {
+			end = mid - 1
+		}
+	}
+	return -1
 }
