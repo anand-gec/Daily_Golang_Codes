@@ -1,5 +1,5 @@
-//array is pass by value 
-// but slice is pass by reference 
+//array is pass by value arr to duplicate new arrayNAme
+// but slice is pass by reference to point slice<-newSlice name
 package main
 
 import "fmt"

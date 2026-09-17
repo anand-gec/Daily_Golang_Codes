@@ -10,6 +10,9 @@ func mergeShort(arr []int) []int {
 
 	arr2 := mergeShort(arr[:mid])
 	arr3 := mergeShort(arr[mid:])
+	return merge(arr2, arr3)
+}
+func merge(arr2, arr3 []int) []int {
 	result := []int{}
 	i, j := 0, 0
 	for i < len(arr2) && j < len(arr3) {
@@ -25,11 +28,10 @@ func mergeShort(arr []int) []int {
 	result = append(result, arr3[j:]...)
 
 	return result
-
 }
 
 func main() {
 	arr := []int{2, 4, 7, 3, 6, 9}
-	k := mergeShort(arr[:])
-	fmt.Println(mergeShort(k))
+	fmt.Println(mergeShort(arr))
+
 }
