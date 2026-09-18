@@ -13,14 +13,13 @@ func NewNode(key int) *Node {
 	return &Node{data: key}
 }
 
-// PreOrder: Root -> Left -> Right
-func printPreOrder(root *Node) {
+func maxDepth(root *Node) int {
 	if root == nil {
-		return
+		return 0
 	}
-	fmt.Printf("%d ", root.data)
-	printPreOrder(root.left)
-	printPreOrder(root.right)
+	lh := maxDepth(root.left)
+	rh := maxDepth(root.right)
+	return 1 + max(lh, rh)
 }
 
 func main() {
@@ -32,10 +31,9 @@ func main() {
 	root.left.left = NewNode(4)
 	root.left.right = NewNode(5)
 
-	root.right.left = NewNode(6)
-	root.right.right = NewNode(7)
+	root.left.right.left = NewNode(6)
+	root.left.right.right = NewNode(7)
 
-	fmt.Print("PreOrder Traversal:  ")
-	printPreOrder(root)
-
+	fmt.Print("inOrder Traversal: ")
+	fmt.Println(maxDepth(root))
 }

@@ -23,6 +23,35 @@ func printPreOrder(root *Node) {
 	printPreOrder(root.right)
 }
 
+// inOrder Traversal (Iterative): Left -> Root -> Right
+func PrintInOrderTraversal(root *Node) []int {
+	inOrder := []int{}
+	stack := []*Node{}
+	node := root
+
+	for {
+		if node != nil {
+			stack = append(stack, node)
+			node = node.left
+		} else {
+			if len(stack) == 0 {
+				break
+			}
+			// Pop from the stack
+			node = stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+
+			// Process current node
+			inOrder = append(inOrder, node.data)
+
+			// Move to right subtree
+			node = node.right
+		}
+	}
+
+	return inOrder
+}
+
 func main() {
 	root := NewNode(1)
 
@@ -37,5 +66,9 @@ func main() {
 
 	fmt.Print("InOrder Traversal:  ")
 	printPreOrder(root)
+	fmt.Println(" ")
+	fmt.Println("\nInOrder Iterative level ")
+	fmt.Print("inOrder Traversal: ")
+	fmt.Println(PrintInOrderTraversal(root))
 
 }
