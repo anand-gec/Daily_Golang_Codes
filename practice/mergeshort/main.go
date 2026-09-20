@@ -6,9 +6,9 @@ func mergeShort(arr []int) []int {
 	if len(arr) < 2 {
 		return arr
 	}
-	mid := len(arr) / 2
-	i, j := 0, 0
 	var result []int
+	i, j := 0, 0
+	mid := len(arr) / 2
 	arr2 := mergeShort(arr[:mid])
 	arr3 := mergeShort(arr[mid:])
 	for i < len(arr2) && j < len(arr3) {
@@ -26,7 +26,7 @@ func mergeShort(arr []int) []int {
 }
 
 func main() {
-	arr := []int{2, 4, 7, 3, 6, 9}
-	fmt.Println(mergeShort(arr))
+	arr := [...]int{7, 2, 6, 3, 9, 1}
+	fmt.Println(mergeShort(arr[:]))
 
 }
