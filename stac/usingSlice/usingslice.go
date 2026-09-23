@@ -7,12 +7,12 @@ import (
 
 var arr = []int{}
 
-func Push(Data int) bool {
+func Push(Data int){
 	arr = append(arr, Data)
-	return true
+	fmt.Printf("Push %d in Stack", Data)
 }
 
-func PrintSlice(arr []int) {
+func Display(arr []int) {
 	for index := len(arr) - 1; index >= 0; index-- {
 		fmt.Printf("| %d |", arr[index])
 		fmt.Println("\n___")
@@ -25,7 +25,7 @@ func IsEmpty(arr []int) bool {
 	}
 	return false
 }
-func PopInArr(arr *[]int) { //return deleted element
+func Pop(arr *[]int) { //return deleted element
 	if len(*arr) == 0 {
 		return
 	}
@@ -40,12 +40,12 @@ func main() {
 	Push(2)
 	Push(4)
 	Push(6)
-	PrintSlice(arr)
+	Display(arr)
 	fmt.Println("For POP ")
-	PopInArr(&arr)
-	// PopInArr(&arr)
-	// PopInArr(&arr)
-	PrintSlice(arr)
+	Pop(&arr)
+	// Pop(&arr)
+	// Pop(&arr)
+	Display(arr)
 	Length(arr)
 	IsEmpty(arr)
 }
