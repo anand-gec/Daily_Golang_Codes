@@ -37,6 +37,7 @@ func PrintNode(head *node) {
 		fmt.Print(" -> ", head.val)
 		head = head.next
 	}
+	fmt.Println("")
 }
 
 func insertAtParticular(num int, val int, head *node) *node {
@@ -104,14 +105,14 @@ func ReverseList(head *node) *node {
 func main() {
 	var head *node
 	head = newNode(16, head)
-	// head = newNode(12, head)
-	// head = newNode(8, head)
-	// head = newNode(6, head)
-	// head = newNode(4, head)
+	head = newNode(12, head)
+	head = newNode(8, head)
+	head = newNode(6, head)
+	head = newNode(4, head)
 
 	// insertAtParticular(4, 3, head)
 	// insertAtParticular(6, 5, head)
-	// head = addLastNode(20, head)
+	head = addLastNode(20, head)
 	// head = DeleteParticularNode(4, head)
 	PrintNode(head)
 	// fmt.Println("\n", IsValuePresent(0, head))

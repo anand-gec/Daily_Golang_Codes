@@ -7,9 +7,10 @@ import (
 
 var arr = []int{}
 
-func Push(Data int){
+func Push(Data int) {
 	arr = append(arr, Data)
-	fmt.Printf("Push %d in Stack", Data)
+	fmt.Printf("Pushed %d in Stack Success", Data)
+	fmt.Println("")
 }
 
 func Display(arr []int) {
@@ -29,6 +30,7 @@ func Pop(arr *[]int) { //return deleted element
 	if len(*arr) == 0 {
 		return
 	}
+	fmt.Println("Popped:", (*arr)[len(*arr) - 1])
 	*arr = slices.Delete(*arr, len(*arr)-1, len(*arr))
 }
 

@@ -20,9 +20,9 @@ func Pop(head *Stack) *Stack {
 	if head == nil || head.next == nil {
 		return nil
 	}
+	fmt.Printf("Popped: %d\n", head.Data)
 	temp := head.next
 	head.next = nil
-
 	return temp
 }
 
@@ -33,16 +33,16 @@ func IsEmpty(head *Stack) bool {
 	return false
 }
 
-func LengthOfStack(head *Stack) int {
+func Length(head *Stack) int {
 	var sum = 0
 	for head != nil {
-		sum++ // sum = sum + i //sum++ /sum+=1
+		sum++ // sum = sum + i /sum++ /sum+=1
 		head = head.next
 	}
 	return sum
 }
 
-func PrintStack(head *Stack) {
+func Display(head *Stack) {
 	for head != nil {
 		fmt.Printf("| %d |", head.Data)
 		fmt.Println("\n____")
@@ -56,7 +56,7 @@ func main() {
 	head = Push(6, head)
 	head = Push(4, head)
 	head = Pop(head)
-	IsEmpty(head)
-	PrintStack(head)
-	fmt.Println("Length of Stack is :", LengthOfStack(head))
+	fmt.Println("is Stack Empty :", IsEmpty(head))
+	Display(head)
+	fmt.Println("Length of Stack is :", Length(head))
 }

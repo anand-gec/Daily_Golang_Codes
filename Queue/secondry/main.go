@@ -1,3 +1,4 @@
+// Queue implemented in LinkedList
 package main
 
 import "fmt"
