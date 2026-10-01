@@ -11,6 +11,7 @@ type Node struct {
 func NewNode(key int) *Node {
 	return &Node{data: key}
 }
+
 func PreOrder(root *Node) {
 	if root == nil {
 		return
@@ -20,6 +21,7 @@ func PreOrder(root *Node) {
 	PreOrder(root.right)
 
 }
+
 func InOrder(root *Node) {
 	if root == nil {
 		return
@@ -28,6 +30,7 @@ func InOrder(root *Node) {
 	fmt.Printf("%d ", root.data)
 	InOrder(root.right)
 }
+
 func PostOrder(root *Node) {
 	if root == nil {
 		return

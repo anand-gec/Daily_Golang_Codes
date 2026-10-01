@@ -53,3 +53,5 @@ func main() {
 	newPayment.makePayment(100)
 
 }
+
+
